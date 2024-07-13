@@ -1,6 +1,7 @@
 import statistics
 from statistics import geometric_mean
-trabajadores =  ["Juan Pérez","María García","Carlos López"]
+import random
+trabajadores = ["Juan Pérez","María García","Carlos López","Ana Martínez","Pedro Rodríguez","Laura Hernández","Miguel Sánchez","Isabel Gómez","Francisco Díaz","Elena Fernández"]
 sueldos= []
 sueldosAltos= []
 sueldosMedios=[]
@@ -34,13 +35,8 @@ while on ==0:
     if election==1:
         for element in trabajadores:
             while sueldo <= 300000 or sueldo>=2500000:
-                try:
-                    print(" solo cifras entre $300.000 y $2.500.000 ")
-                    sueldo=int(input(f"Asigne sueldo de {element}: $"))
-                except ValueError:
-                    print(" solo cifras entre $300.000 y $2.500.000 ")
+                sueldo=random.randint(300000,2500000)
                 ADDsueldo(element,sueldo)
-                print(" sueldo agregados ")
             sueldo=0
     elif election==2:
         for element in sueldos:
